@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="93.0" prefWidth="249.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.Controller">
+   <children>
+      <TextField layoutX="71.0" layoutY="18.0" prefHeight="25.0" prefWidth="162.0" />
+      <Text layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " />
+      <Button layoutX="25.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="208.0" text="Change Name" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="745.0" prefWidth="1164.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.ExceptionsController">
+   <children>
+      <ImageView fitHeight="794.0" fitWidth="617.0">
+         <image>
+            <Image url="@../images/exceptionsHome.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="691.0" layoutY="376.0" text="Java Exceptions" textFill="WHITE">
+         <font>
+            <Font name="Roboto Bold" size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="691.0" layoutY="356.0" text="Final Task" textFill="#9c9c9ca5">
+         <font>
+            <Font name="Roboto Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="691.0" layoutY="449.0" mnemonicParsing="false" onAction="#openTask" prefHeight="41.0" prefWidth="106.0" style="-fx-background-color: #1e1e1e; -fx-border-color: #fcbc30; -fx-border-width: 2; -fx-border-radius: 7;" text="Open" textFill="#fcbc30">
+         <font>
+            <Font name="Roboto Black" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="806.0" layoutY="449.0" mnemonicParsing="false" onAction="#closeTask" prefHeight="41.0" prefWidth="106.0" style="-fx-background-color: #1e1e1e; -fx-border-color: #f86828; -fx-border-width: 2; -fx-border-radius: 7;" text="Close" textFill="#f86828">
+         <font>
+            <Font name="Roboto Black" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
