@@ -29,4 +29,5 @@ For the Animation Effects, [AnimateFX by Typhon0](https://github.com/Typhon0/Ani
 ### Version:
 Pre-Release, (Alpha Version, 7.7.21)
 > A clunky and crammed version of the software.
-**v7.7.21-alpha**: https://github.com/aidrecabrera/CentralizedSvene/releases/tag/v7.7.21-alpha
+
+**Download v7.7.21-alpha:** https://github.com/aidrecabrera/CentralizedSvene/releases/tag/v7.7.21-alpha
