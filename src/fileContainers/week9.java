@@ -1,7 +1,6 @@
-package softfiles;
+package fileContainers;
 
 public class week9 {
-
     static void sectionB() {
         try {
             int[] myNumbers = {1, 2, 3};

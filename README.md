@@ -1,6 +1,6 @@
 # Centralized Svene by Aidre Cabrera
 
-A Centralized Program developed for the convenience of accessing the project softfiles for Cor Jesu College, Inc. Computer Studies Project Tasks. Specifically, it was developed for the purpose of allowing the learning in Java programming to be exercised, and not limiting the learnings from the provided textbooks.
+A Centralized Program developed for the convenience of accessing the project fileContainers for Cor Jesu College, Inc. Computer Studies Project Tasks. Specifically, it was developed for the purpose of allowing the learning in Java programming to be exercised, and not limiting the learnings from the provided textbooks.
 
 ![image](https://user-images.githubusercontent.com/61798731/160700056-2d3895c2-6ba9-4d56-8ba5-86c966841552.png)
 
