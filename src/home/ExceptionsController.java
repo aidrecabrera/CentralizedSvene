@@ -21,7 +21,7 @@ public class ExceptionsController {
 
     @FXML
     void openTask(ActionEvent event) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://bit.ly/JavaExceptionsCJC"));
+        Desktop.getDesktop().browse(new URI("https://bit.ly/CJCJavaExceptions"));
     }
     @FXML
     void closeTask(ActionEvent event) throws IOException {
