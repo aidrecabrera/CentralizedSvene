@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="927.0" prefWidth="825.0" style="-fx-background-color: #2f3237;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.PyramidTaskController">
+   <children>
+      <Button layoutX="722.0" layoutY="863.0" mnemonicParsing="false" onAction="#closeTask" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: #ec4145;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Button>
+      <TilePane alignment="CENTER" hgap="25.0" layoutX="6.0" layoutY="26.0" prefHeight="744.0" prefWidth="814.0" vgap="25.0">
+         <children>
+            <TextArea fx:id="firstPyramid" editable="false" prefHeight="350.0" prefWidth="350.0" />
+            <TextArea fx:id="secondPyramid" editable="false" prefHeight="350.0" prefWidth="350.0" />
+            <TextArea fx:id="thirdPyramid" editable="false" prefHeight="350.0" prefWidth="350.0" />
+            <TextArea fx:id="fourthPyramid" editable="false" prefHeight="350.0" prefWidth="350.0" />
+         </children>
+      </TilePane>
+      <Button layoutX="550.0" layoutY="828.0" mnemonicParsing="false" onAction="#calculatePyramid" prefHeight="28.0" prefWidth="227.0" style="-fx-background-color: #7289da;" text="Generate" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font></Button>
+      <TextField fx:id="pyramidSize" layoutX="549.0" layoutY="792.0" prefHeight="26.0" prefWidth="227.0">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label layoutX="425.0" layoutY="797.0" text="Enter PySize:" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="21.0" />
+         </font></Label>
+      <Button layoutX="550.0" layoutY="863.0" mnemonicParsing="false" onAction="#clearPyramid" prefHeight="27.0" prefWidth="167.0" style="-fx-background-color: #d8393f;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font></Button>
+      <HBox alignment="CENTER" layoutX="49.0" layoutY="785.0" prefHeight="109.0" prefWidth="350.0" spacing="15.0" style="-fx-background-color: #f37b68; -fx-background-radius: 15px;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="78.0">
+               <image>
+                  <Image url="@../images/CJC%20Logo%20White%20-%20777.png" />
+               </image>
+            </ImageView>
+            <Label text="PyGenerator" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="43.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

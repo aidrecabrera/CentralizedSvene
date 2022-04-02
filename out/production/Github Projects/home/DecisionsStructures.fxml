@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="670.0" prefWidth="591.0" style="-fx-background-color: #2c2f33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.DecisionsStructuresController">
+   <children>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="12.0" layoutY="22.0" prefHeight="167.0" prefWidth="579.0">
+         <children>
+            <ImageView fitHeight="125.0" fitWidth="126.0">
+               <image>
+                  <Image url="@../images/CJC%20Logo%20White%20-%20777.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </ImageView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Enrollment Form" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Text>
+         </children>
+      </VBox>
+      <VBox fillWidth="false" layoutX="26.0" layoutY="196.0" prefHeight="452.0" prefWidth="550.0" spacing="7.0" style="-fx-background-color: #2c2f33; -fx-background-radius: 15px;">
+         <children>
+            <TableView fx:id="enrolledStudentTable" prefHeight="262.0" prefWidth="520.0">
+              <columns>
+                <TableColumn fx:id="studentName" editable="false" prefWidth="167.0" text="Student Name" />
+                  <TableColumn fx:id="studentSession" editable="false" minWidth="0.0" prefWidth="103.0" text="Session" />
+                <TableColumn fx:id="studentCourse" editable="false" minWidth="0.0" prefWidth="113.0" text="Course" />
+                  <TableColumn fx:id="totalBalance" editable="false" minWidth="0.0" prefWidth="136.0" text="Total Balance" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="164.0" prefWidth="520.0" spacing="7.0">
+               <children>
+                  <VBox fillWidth="false" prefHeight="100.0" prefWidth="433.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="318.0" spacing="15.0" style="-fx-background-color: #677490; -fx-background-radius: 5px;">
+                           <children>
+                              <BorderPane prefHeight="33.0" prefWidth="650.0">
+                                 <right>
+                                    <Label fx:id="fullName" text="Name" textFill="WHITE" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Calibri Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </right>
+                                 <left>
+                                    <Label text="Name:" textFill="WHITE" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Calibri Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </left>
+                              </BorderPane>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox fillWidth="false" prefHeight="121.0" prefWidth="313.0" style="-fx-background-color: #4f5d7e; -fx-background-radius: 5;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="427.0" spacing="10.0">
+                                 <children>
+                                    <BorderPane prefHeight="21.0" prefWidth="287.0">
+                                       <left>
+                                          <Label text="Session:" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </left>
+                                       <right>
+                                          <Label fx:id="sessIon" text="Session" textFill="WHITE" BorderPane.alignment="CENTER" />
+                                       </right>
+                                    </BorderPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="375.0" spacing="15.0">
+                                 <children>
+                                    <BorderPane prefHeight="46.0" prefWidth="287.0">
+                                       <left>
+                                          <Label text="Course:" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </left>
+                                       <right>
+                                          <Label fx:id="courseDesc" text="Course" textFill="WHITE" BorderPane.alignment="CENTER" />
+                                       </right>
+                                    </BorderPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="329.0" spacing="15.0">
+                                 <children>
+                                    <BorderPane prefHeight="23.0" prefWidth="424.0">
+                                       <left>
+                                          <Label text="Total Balance:" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </left>
+                                       <right>
+                                          <Label fx:id="totBal" text="Total Balance" textFill="WHITE" BorderPane.alignment="CENTER" />
+                                       </right>
+                                    </BorderPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="320.0" spacing="7.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#calculateDec" prefHeight="131.0" prefWidth="200.0" style="-fx-background-color: #7289da; -fx-background-radius: 5;" text="New Enrollment" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#closeTask" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #d8393f; -fx-background-radius: 5;" text="Exit" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
