@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="InheritanceExecutable">
+    <output-path>$PROJECT_DIR$/out/artifacts/InheritanceExecutable</output-path>
+    <root id="archive" name="Github Projects.jar">
+      <element id="module-output" name="Github Projects" />
+    </root>
+  </artifact>
+</component>

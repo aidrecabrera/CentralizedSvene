@@ -22,7 +22,7 @@ For the Animation Effects, [AnimateFX by Typhon0](https://github.com/Typhon0/Ani
 - [x] **Week 5** - Operators and Decision Structures (Part 2)
 - [x] **Week 6** - Looping
 - [x] **Week 9** - Exceptions
-
+- [x] **Week 10** - Class and Objects
 
 ## Download Release
 
