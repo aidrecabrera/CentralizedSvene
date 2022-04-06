@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="608.0" prefWidth="600.0" style="-fx-background-color: #23272a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.InheritanceAndObjectsController">
+   <children>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="101.0" layoutY="271.0" prefHeight="134.0" prefWidth="400.0" style="-fx-background-color: #2f3136; -fx-background-radius: 15px;">
+         <children>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <bottom>
+                  <VBox prefHeight="38.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="i" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbi" text="N/A" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Regular" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="j" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbj" text="N/A" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Regular" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="k" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbk" text="N/A" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Regular" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </bottom>
+               <center>
+                  <Label text="Contents of subOb (Subclass B)" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Black" size="17.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="100.0" layoutY="138.0" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #2f3136; -fx-background-radius: 15px;">
+         <children>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <center>
+                  <Label text="Contents of superOb (Superclass A)" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Black" size="17.0" />
+                     </font>
+                  </Label>
+               </center>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </BorderPane>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <left>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="i" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="spi" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </right>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </BorderPane>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <left>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="j" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="spj" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </right>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <Button layoutX="100.0" layoutY="526.0" mnemonicParsing="false" onAction="#startInheritance" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #23272a; -fx-border-color: #fcbc30; -fx-border-width: 2; -fx-border-radius: 7;" text="Start" textFill="#fcbc30">
+         <font>
+            <Font name="Roboto Bold" size="12.0" />
+         </font></Button>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="100.0" layoutY="434.0" prefHeight="74.0" prefWidth="400.0" style="-fx-background-color: #2f3136; -fx-background-radius: 15px;">
+         <children>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <center>
+                  <Label text="Sum of i, j, and k in subOb:" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Black" size="17.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets bottom="7.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+               <bottom>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="i + j + k = " textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Regular" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="iSum" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <Button layoutX="360.0" layoutY="526.0" mnemonicParsing="false" onAction="#openTask" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #23272a; -fx-border-color: #09b0f2; -fx-border-width: 2; -fx-border-radius: 7;" text="Console Version" textFill="#09b0f2">
+         <font>
+            <Font name="Roboto Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="189.0" layoutY="43.0" text="Object-Oriented Programming" textFill="#5866ef">
+         <font>
+            <Font name="Roboto Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="122.0" layoutY="63.0" prefHeight="59.0" prefWidth="365.0" text="Java Inheritance" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto Bold" size="49.0" />
+         </font>
+      </Label>
+      <Button layoutX="231.0" layoutY="526.0" mnemonicParsing="false" onAction="#clearInheritance" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #23272a; -fx-border-color: #ec4145; -fx-border-width: 2; -fx-border-radius: 7;" text="Clear" textFill="#ec4145">
+         <font>
+            <Font name="Roboto Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="565.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeTask" prefHeight="17.0" prefWidth="21.0" style="-fx-background-color: #ec4145;" text="✕" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="7.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

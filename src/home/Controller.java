@@ -1,8 +1,6 @@
 package home;
 
-import home.operatorsanddecisionp1.*;
 import animatefx.animation.FadeIn;
-import home.operatorsanddecisionp1.logicLibrary;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +9,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import javax.swing.text.html.ImageView;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -105,6 +97,33 @@ public class Controller implements Initializable {
         }
     }
 
+    public void inheritanceClick(javafx.event.ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Inherit.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+            Stage pyramidStage = new Stage();
+            //set stage borderless
+            pyramidStage.initStyle(StageStyle.UNDECORATED);
+            pyramidStage.setScene(new Scene(root1));
+            pyramidStage.show();
+
+            new FadeIn(root1).play();
+
+            //drag it here
+            root1.setOnMousePressed(event -> {
+                x = event.getSceneX();
+                y = event.getSceneY();
+            });
+            root1.setOnMouseDragged(event -> {
+                pyramidStage.setX(event.getScreenX() - x);
+                pyramidStage.setY(event.getScreenY() - y);
+            });
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
     //PanelButtons
     //Pyramid Button
     public void pyramidClick(javafx.event.ActionEvent actionEvent) {

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="556.0" prefWidth="483.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.InheritanceAndObjectsController">
+   <children>
+      <Label contentDisplay="CENTER" layoutX="61.0" layoutY="91.0" prefHeight="59.0" prefWidth="365.0" text="Java Inheritance" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto Bold" size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="128.0" layoutY="71.0" text="Object-Oriented Programming" textFill="#9c9c9ca5">
+         <font>
+            <Font name="Roboto Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="73.0" layoutY="477.0" mnemonicParsing="false" onAction="#startInheritance" prefHeight="41.0" prefWidth="158.0" style="-fx-background-color: #1e1e1e; -fx-border-color: #fcbc30; -fx-border-width: 2; -fx-border-radius: 7;" text="Start" textFill="#fcbc30">
+         <font>
+            <Font name="Roboto Black" size="15.0" />
+         </font>
+      </Button>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="43.0" layoutY="165.0" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: gray; -fx-border-radius: 15px;">
+         <children>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <center>
+                  <Label text="Contents of superOb (Superclass A)" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Black" size="17.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <right>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="spi" text="i" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </right>
+               <left>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="i" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </left>
+            </BorderPane>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <left>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="j" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="spj" text="j" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </right>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="44.0" layoutY="298.0" prefHeight="134.0" prefWidth="400.0" style="-fx-background-color: gray; -fx-border-radius: 15px;">
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+         <children>
+            <BorderPane prefHeight="40.0" prefWidth="283.0">
+               <center>
+                  <Label text="Contents of subOb (Subclass B)" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Black" size="17.0" />
+                     </font>
+                  </Label>
+               </center>
+               <bottom>
+                  <VBox prefHeight="38.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="i" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbi" text="i" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="j" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbj" text="j" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                        <BorderPane prefHeight="40.0" prefWidth="283.0">
+                           <left>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="k" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </left>
+                           <right>
+                              <HBox alignment="CENTER" fillHeight="false" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="sbk" text="k" textFill="WHITE">
+                                       <font>
+                                          <Font name="Roboto Black" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </right>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </BorderPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

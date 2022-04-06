@@ -98,34 +98,39 @@
          <right>
             <VBox alignment="CENTER" fillWidth="false" prefHeight="480.0" prefWidth="725.0" spacing="15.0" BorderPane.alignment="CENTER">
                <children>
-                  <TilePane alignment="CENTER" hgap="15.0" prefHeight="387.0" prefWidth="637.0" vgap="15.0">
+                  <TilePane alignment="CENTER" hgap="15.0" prefHeight="530.0" prefWidth="634.0" vgap="15.0">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#firstJavaClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Application" textFill="#bfbfbf">
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#firstJavaClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Application" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="homeButton31" mnemonicParsing="false" onAction="#VariablesKeyClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Variables" textFill="#bfbfbf">
+                        <Button fx:id="homeButton31" mnemonicParsing="false" onAction="#VariablesKeyClicked" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Variables" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="homeButton3" mnemonicParsing="false" onAction="#operateClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Operators" textFill="#bfbfbf">
+                        <Button fx:id="homeButton3" mnemonicParsing="false" onAction="#operateClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Operators" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#decstrucClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Decisions" textFill="#bfbfbf">
+                        <Button mnemonicParsing="false" onAction="#decstrucClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Decisions" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#loopClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Looping" textFill="#bfbfbf">
+                        <Button mnemonicParsing="false" onAction="#loopClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Looping" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#exceptClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Exceptions" textFill="#bfbfbf">
+                        <Button mnemonicParsing="false" onAction="#exceptClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Exceptions" textFill="#bfbfbf">
+                           <font>
+                              <Font name="Calibri Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#inheritanceClick" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Inheritance" textFill="#bfbfbf">
                            <font>
                               <Font name="Calibri Bold" size="15.0" />
                            </font>

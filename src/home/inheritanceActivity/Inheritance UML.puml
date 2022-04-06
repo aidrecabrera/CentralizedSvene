@@ -1,0 +1,34 @@
+@startuml
+class A {
+    + int i
+    + int j
+    + display()
+}
+note top of A : Superclass A
+
+class B extends A {
+    + int k
+    + display()
+}
+note top of B : Subclass B
+
+class inheritance_Cabrera {
+    + main(String[] args)
+}
+
+class main {
+    + A superOb = new A();
+    + B subOb = new B();
+    + Scanner superCScnr = new Scanner(System.in);
+    + Scanner subCScnr = new Scanner(System.in);
+    + superOb.display();
+    + subOb.display();
+}
+
+inheritance_Cabrera --> main
+main <-- A : main calls superOb.display
+main <-- B : main calls subOb.display
+
+
+
+@enduml
