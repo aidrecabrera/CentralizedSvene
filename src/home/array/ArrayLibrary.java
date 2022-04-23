@@ -91,12 +91,12 @@ public class ArrayLibrary {
         FinalOutputContainer[0] = userName;
         FinalOutputContainer[1] = String.valueOf(userRoomRate);
         FinalOutputContainer[2] = SessionAccomodation;
-        FinalOutputContainer[3] = String.valueOf(SessionServiceRate);
-        FinalOutputContainer[4] = String.valueOf(SessionRoomRate);
+        FinalOutputContainer[3] = String.valueOf((int)SessionServiceRate);
+        FinalOutputContainer[4] = String.valueOf( String.format("%.2f", SessionRoomRate));
         FinalOutputContainer[5] = String.valueOf(SessionDaysStay);
-        FinalOutputContainer[6] = String.valueOf(BillContainer[0]);
-        FinalOutputContainer[7] = String.valueOf(BillContainer[1]);
-        FinalOutputContainer[8] = String.valueOf(BillContainer[2]);
+        FinalOutputContainer[6] = String.valueOf(String.format("%.2f", BillContainer[0]));
+        FinalOutputContainer[7] = String.valueOf(String.format("%.2f",BillContainer[1]));
+        FinalOutputContainer[8] = String.valueOf(String.format("%.2f",BillContainer[2]));
     }
     void PrintingFinalOutput() {
         System.out.println("\n\n-----------------Receipt-----------------");
@@ -104,12 +104,12 @@ public class ArrayLibrary {
                 "\nGuest Name: " + FinalOutputContainer[0] +
                         "\nRoom Number: " + FinalOutputContainer[1] +
                         "\nAccommodation: " + FinalOutputContainer[2] +
-                        "\nService Rate: " + FinalOutputContainer[3] +
-                        "\nRoom Rate: " + FinalOutputContainer[4] +
-                        "\nDays Stay: " + FinalOutputContainer[5] +
+                        "\nService Rate: " + FinalOutputContainer[3] + "%" +
+                        "\n\nRoom Rate: " + FinalOutputContainer[4] +
+                        "\nDays Stay: " + FinalOutputContainer[5] + " days" +
                         "\nAccommodation Fee: " + FinalOutputContainer[6] +
                         "\nAdd Service Fee: " + FinalOutputContainer[7] +
-                        "\nGross Fee: " + FinalOutputContainer[8]
+                        "\n\nGross Fee: " + FinalOutputContainer[8]
         );
         System.out.println("\n----------------------------------------");
     }
