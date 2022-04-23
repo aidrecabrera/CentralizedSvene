@@ -135,6 +135,11 @@
                               <Font name="Calibri Bold" size="15.0" />
                            </font>
                         </Button>
+                        <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="200.0" style="-fx-background-color: #3c3f44; -fx-background-radius: 15;" text="Java Array" textFill="#bfbfbf">
+                           <font>
+                              <Font name="Calibri Bold" size="15.0" />
+                           </font>
+                        </Button>
                      </children>
                      <VBox.margin>
                         <Insets top="15.0" />

@@ -12,8 +12,6 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/lib/javafx.swing.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/lib/javafx.base.jar" path-in-jar="/" />
-      <element id="library" level="project" name="AnimateFX-1.2.0" />
-      <element id="library" level="project" name="javafx-swt" />
       <element id="file-copy" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/bin/api-ms-win-core-console-l1-1-0.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/bin/api-ms-win-core-console-l1-2-0.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../Java/javafx-sdk-17.0.2/bin/api-ms-win-core-datetime-l1-1-0.dll" />
