@@ -17,25 +17,38 @@ public class logicLibrary {
 
     public void studentInputNewVersion(){
         String scanUserCurrentFName = JOptionPane.showInputDialog("First Name: ");
-        String scanUserCurrentMName = JOptionPane.showInputDialog("Middle Name: ");
-        String scanUserCurrentLName = JOptionPane.showInputDialog("Last Name: ");
+
         String scanCurrentSS = String.valueOf(JOptionPane.showInputDialog(
                 null,
                 "Preferred session: ",
                 "Input", JOptionPane.QUESTION_MESSAGE,
                 null, referDataLibrary.ssDataList, referDataLibrary.ssDataList[0]));
-        String scanCurrentCRSCode = (String) JOptionPane.showInputDialog(
-                null,
-                "Programming Course: ",
-                "Input", JOptionPane.QUESTION_MESSAGE,
-                null, referDataLibrary.crsDescriptionDataList, referDataLibrary.crsDescriptionDataList[0]);
-        double scanCurrentRegFee = Integer.parseInt(JOptionPane.showInputDialog("Registration Fee: "));
 
-        char converToMiddleInitial = scanUserCurrentMName.charAt(0);
-        userCurrentName = scanUserCurrentFName + " " + converToMiddleInitial + "." + " " + scanUserCurrentLName;
-        currentSS = scanCurrentSS;
-        currentCRSCode = scanCurrentCRSCode;
-        currentRegFee = scanCurrentRegFee;
+        JOptionPane.showMessageDialog(
+                null,
+                "Student Name: " + userCurrentName + '\n' + "Session: " + currentSS +
+                        '\n' + "Course Description: " + referDataLibrary.courseName + '\n' + "Total Balance: Php " + finalTotalBalance);
+
+//        String scanUserCurrentFName = JOptionPane.showInputDialog("First Name: ");
+//        String scanUserCurrentMName = JOptionPane.showInputDialog("Middle Name: ");
+//        String scanUserCurrentLName = JOptionPane.showInputDialog("Last Name: ");
+//        String scanCurrentSS = String.valueOf(JOptionPane.showInputDialog(
+//                null,
+//                "Preferred session: ",
+//                "Input", JOptionPane.QUESTION_MESSAGE,
+//                null, referDataLibrary.ssDataList, referDataLibrary.ssDataList[0]));
+//        String scanCurrentCRSCode = (String) JOptionPane.showInputDialog(
+//                null,
+//                "Programming Course: ",
+//                "Input", JOptionPane.QUESTION_MESSAGE,
+//                null, referDataLibrary.crsDescriptionDataList, referDataLibrary.crsDescriptionDataList[0]);
+//        double scanCurrentRegFee = Integer.parseInt(JOptionPane.showInputDialog("Registration Fee: "));
+//
+//        char converToMiddleInitial = scanUserCurrentMName.charAt(0);
+//        userCurrentName = scanUserCurrentFName + " " + converToMiddleInitial + "." + " " + scanUserCurrentLName;
+//        currentSS = scanCurrentSS;
+//        currentCRSCode = scanCurrentCRSCode;
+//        currentRegFee = scanCurrentRegFee;
     }
     public void cjcLogic() {
         switch (userSSCodeInput) {

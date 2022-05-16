@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="305.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AtmMachineSimpleArray.CorBank">
+   <children>
+      <Label layoutX="64.0" layoutY="30.0" text="Account Savings Balance: " />
+      <Label fx:id="thisSavingsBalance" layoutX="130.0" layoutY="53.0" text="0.0" />
+      <Label layoutX="60.0" layoutY="78.0" text="Account Checking Balance: " />
+      <Label fx:id="thisCheckingBalance" layoutX="130.0" layoutY="100.0" text="0.0" />
+      <Button layoutX="41.0" layoutY="129.0" mnemonicParsing="false" onAction="#withdrawClick" prefHeight="42.0" prefWidth="195.0" text="Withdraw" />
+      <Button layoutX="41.0" layoutY="181.0" mnemonicParsing="false" onAction="#DespositClick" prefHeight="42.0" prefWidth="195.0" text="Deposit" />
+      <Button layoutX="41.0" layoutY="234.0" mnemonicParsing="false" onAction="#TransferClick" prefHeight="42.0" prefWidth="195.0" text="Transfer" />
+   </children>
+</AnchorPane>

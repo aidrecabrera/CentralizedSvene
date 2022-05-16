@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="247.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AtmMachineHashMap.ParentCorBank">
+   <children>
+      <Button layoutX="190.0" layoutY="109.0" mnemonicParsing="false" onAction="#AccCheckings" text="Button" />
+      <Button layoutX="190.0" layoutY="171.0" mnemonicParsing="false" onAction="#AccSavings" text="Button" />
+   </children>
+</AnchorPane>

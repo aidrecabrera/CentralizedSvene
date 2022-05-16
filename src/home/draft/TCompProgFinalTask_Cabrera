@@ -1,0 +1,524 @@
+package home.draft;
+
+// Importing the necessary libraries for the program to run.
+
+import javax.swing.*;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.*;
+
+/**
+ * It's the main class that runs the program
+ */
+public class TCompProgFinalTask_Cabrera {
+
+    /**
+     * This function is the main function of the program. It creates an object of
+     * the OptionMenus class
+     * and calls the CorBankInterfaceManu() function
+     */
+    public static void main(String[] args) throws IOException {
+        OptionMenus optionMenus = new OptionMenus();
+        /**
+         * This function prints out a welcome message to the user
+         */
+        // The above code is creating a class called CorBankInterface.
+        CorBankIntroduction();
+        optionMenus.CorBankInterfaceManu();
+    }
+
+    public static void CorBankIntroduction() {
+        System.out.println("Welcome to the ATM Project!");
+    }
+}
+
+class OptionMenus {
+    // Creating a new scanner object called mainScannerCorBank.
+    Scanner mainScannerCorBank = new Scanner(System.in);
+    // Creating a new DecimalFormat object called PhCurrencyFormat.
+    DecimalFormat PhCurrencyFormat = new DecimalFormat("'$'###,##0.00");
+    // Creating a HashMap that will store the CorBankAccountLogic objects.
+    HashMap<Integer, CorBankAccountLogic> CorBankHashMap = new HashMap<Integer, CorBankAccountLogic>();
+
+    public void CorBankStudentLogin() throws IOException {
+        boolean end = false;
+        int CorBankNumber = 0;
+        int CorBankPinNumber = 0;
+        CorBankNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter your CorBank Number: "));
+        CorBankPinNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter your CorBank PIN: "));
+        // The above code is checking if the customer number and pin number are in the hashmap. If they
+        // are, it will call the CorBankAccountSelection method.
+        while (!end) {
+            try {
+                // Creating a new iterator object called it.
+                CorBankNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter your CorBank Number: "));
+                CorBankPinNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter your CorBank PIN: "));
+                Iterator it = CorBankHashMap.entrySet().iterator();
+                // Checking if the customer number and pin number are in the hashmap. If they
+                // are, it
+                // will call the CorBankAccountSelection method.
+                while (it.hasNext()) {
+                    Map.Entry pair = (Map.Entry) it.next();
+                    CorBankAccountLogic acc = (CorBankAccountLogic) pair.getValue();
+                    // Checking if the customer number and pin number are in the hashmap. If they
+                    // are,
+                    // it will call the CorBankAccountSelection method.
+                    if (CorBankHashMap.containsKey(CorBankNumber)
+                            && CorBankPinNumber == acc.getCorBankCorBankPinNumber()) {
+                        CorBankAccountSelection(acc);
+                        end = true;
+                        break;
+                    }
+                }
+                // Checking if the customer number and pin number are correct.
+                if (!end) {
+                    System.out.println("\nWrong Customer Number or Pin Number");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Character(s). Only Numbers.");
+            }
+        }
+    }
+
+    /**
+     * It's a function that allows the user to select which account they want to access.
+     * </code>
+     * 
+     * @param acc CorBankAccountLogic
+     */
+    // The above code is a switch statement that is used to select the account you want to access.
+    public void CorBankAccountSelection(CorBankAccountLogic acc) {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nSelect the account you want to access: ");
+                System.out.println(" Type 1 - Checkings CorBankAccountLogic");
+                System.out.println(" Type 2 - Savings CorBankAccountLogic");
+                System.out.println(" Type 3 - Exit");
+                System.out.print("\nChoice: ");
+
+                int selection = mainScannerCorBank.nextInt();
+
+                switch (selection) {
+                    case 1:
+                        CorBankStudentChecking(acc);
+                        break;
+                    case 2:
+                        CorBankStudentsSaving(acc);
+                        break;
+                    case 3:
+                        end = true;
+                        break;
+                    default:
+                        System.out.println("\nInvalid Choice.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                mainScannerCorBank.next();
+            }
+        }
+    }
+
+    public void CorBankStudentChecking(CorBankAccountLogic acc) {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nCheckings CorBankAccountLogic: ");
+                System.out.println(" Type 1 - View Balance");
+                System.out.println(" Type 2 - Withdraw Funds");
+                System.out.println(" Type 3 - Deposit Funds");
+                System.out.println(" Type 4 - Transfer Funds");
+                System.out.println(" Type 5 - Exit");
+                System.out.print("\nChoice: ");
+
+                int selection = mainScannerCorBank.nextInt();
+
+                switch (selection) {
+                    case 1:
+                        System.out.println("\nCheckings CorBankAccountLogic Balance: "
+                                + PhCurrencyFormat.format(acc.getStudentCheckingBalance()));
+                        break;
+                    case 2:
+                        acc.getCheckingWithdrawInput();
+                        break;
+                    case 3:
+                        acc.getCheckingDepositInput();
+                        break;
+
+                    case 4:
+                        acc.getTransferInput("Checkings");
+                        break;
+                    case 5:
+                        end = true;
+                        break;
+                    default:
+                        System.out.println("\nInvalid Choice.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                mainScannerCorBank.next();
+            }
+        }
+    }
+
+    /**
+     * This function is a menu that allows the user to view their balance, withdraw funds, deposit
+     * funds, transfer funds, or exit the menu
+     * 
+     * @param acc CorBankAccountLogic
+     */
+    public void CorBankStudentsSaving(CorBankAccountLogic acc) {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nSavings CorBankAccountLogic: ");
+                System.out.println(" Type 1 - View Balance");
+                System.out.println(" Type 2 - Withdraw Funds");
+                System.out.println(" Type 3 - Deposit Funds");
+                System.out.println(" Type 4 - Transfer Funds");
+                System.out.println(" Type 5 - Exit");
+                System.out.print("Choice: ");
+                int selection = mainScannerCorBank.nextInt();
+                switch (selection) {
+                    case 1:
+                        System.out.println("\nSavings CorBankAccountLogic Balance: "
+                                + PhCurrencyFormat.format(acc.getStudentSavingsBalance()));
+                        break;
+                    case 2:
+                        acc.getsavingWithdrawInput();
+                        break;
+                    case 3:
+                        acc.getSavingDepositInput();
+                        break;
+                    case 4:
+                        acc.getTransferInput("Savings");
+                        break;
+                    case 5:
+                        end = true;
+                        break;
+                    default:
+                        System.out.println("\nInvalid Choice.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                mainScannerCorBank.next();
+            }
+        }
+    }
+
+    /**
+     * It takes a customer number and a pin and adds it to a hashmap.
+     * </code>
+     */
+    public void CorBankAccountRegistration() throws IOException {
+        int cst_no = 0;
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nEnter your customer number ");
+                cst_no = mainScannerCorBank.nextInt();
+                Iterator it = CorBankHashMap.entrySet().iterator();
+                while (it.hasNext()) {
+                    Map.Entry pair = (Map.Entry) it.next();
+                    if (!CorBankHashMap.containsKey(cst_no)) {
+                        end = true;
+                    }
+                }
+                if (!end) {
+                    System.out.println("\nThis customer number is already registered");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                mainScannerCorBank.next();
+            }
+        }
+        System.out.println("\nEnter PIN to be registered");
+        int pin = mainScannerCorBank.nextInt();
+        CorBankHashMap.put(cst_no, new CorBankAccountLogic(cst_no, pin));
+        System.out.println("\nYour new account has been successfuly registered!");
+        System.out.println("\nRedirecting to login.............");
+        CorBankStudentLogin();
+    }
+
+    public void CorBankInterfaceManu() throws IOException {
+        CorBankHashMap.put(952141, new CorBankAccountLogic(952141, 191904, 1000, 5000));
+        CorBankHashMap.put(123, new CorBankAccountLogic(123, 123, 20000, 50000));
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\n Type 1 - Login");
+                System.out.println(" Type 2 - Create CorBankAccountLogic");
+                System.out.print("\nChoice: ");
+                int choice = Integer.parseInt(JOptionPane.showInputDialog("Enter your CorBank Number: "));
+
+                switch (choice) {
+                    case 1:
+                        CorBankStudentLogin();
+                        end = true;
+                        break;
+                    case 2:
+                        CorBankAccountRegistration();
+                        end = true;
+                        break;
+                    default:
+                        System.out.println("\nInvalid Choice.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                mainScannerCorBank.next();
+            }
+        }
+        System.out.println("\nThank You for using this ATM.\n");
+        mainScannerCorBank.close();
+        System.exit(0);
+    }
+}
+
+class CorBankAccountLogic {
+    // variables
+    private int CorBankAccountNumber;
+    private int CorBankCorBankPinNumber;
+    private double StudentCheckingBalance = 0;
+    private double StudentSavingsBalance = 0;
+
+    Scanner input = new Scanner(System.in);
+    DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
+
+    public CorBankAccountLogic() {
+    }
+
+    public CorBankAccountLogic(int CorBankAccountNumber, int CorBankCorBankPinNumber) {
+        this.CorBankAccountNumber = CorBankAccountNumber;
+        this.CorBankCorBankPinNumber = CorBankCorBankPinNumber;
+    }
+
+    public CorBankAccountLogic(int CorBankAccountNumber, int CorBankCorBankPinNumber, double StudentCheckingBalance,
+            double StudentSavingsBalance) {
+        this.CorBankAccountNumber = CorBankAccountNumber;
+        this.CorBankCorBankPinNumber = CorBankCorBankPinNumber;
+        this.StudentCheckingBalance = StudentCheckingBalance;
+        this.StudentSavingsBalance = StudentSavingsBalance;
+    }
+
+    public int setCorBankAccountNumber(int customerNumber) {
+        this.CorBankAccountNumber = customerNumber;
+        return customerNumber;
+    }
+
+    public int getCorBankAccountNumber() {
+        return CorBankAccountNumber;
+    }
+
+    public int setCorBankCorBankPinNumber(int CorBankPinNumber) {
+        this.CorBankCorBankPinNumber = CorBankPinNumber;
+        return CorBankPinNumber;
+    }
+
+    public int getCorBankCorBankPinNumber() {
+        return CorBankCorBankPinNumber;
+    }
+
+    public double getStudentCheckingBalance() {
+        return StudentCheckingBalance;
+    }
+
+    public double getStudentSavingsBalance() {
+        return StudentSavingsBalance;
+    }
+
+    public double calcCheckingWithdraw(double amount) {
+        StudentCheckingBalance = (StudentCheckingBalance - amount);
+        return StudentCheckingBalance;
+    }
+
+    public double calcSavingWithdraw(double amount) {
+        StudentSavingsBalance = (StudentSavingsBalance - amount);
+        return StudentSavingsBalance;
+    }
+
+    public double calcCheckingDeposit(double amount) {
+        StudentCheckingBalance = (StudentCheckingBalance + amount);
+        return StudentCheckingBalance;
+    }
+
+    public double calcSavingDeposit(double amount) {
+        StudentSavingsBalance = (StudentSavingsBalance + amount);
+        return StudentSavingsBalance;
+    }
+
+    public void calcCheckTransfer(double amount) {
+        StudentCheckingBalance = StudentCheckingBalance - amount;
+        StudentSavingsBalance = StudentSavingsBalance + amount;
+    }
+
+    public void calcSavingTransfer(double amount) {
+        StudentSavingsBalance = StudentSavingsBalance - amount;
+        StudentCheckingBalance = StudentCheckingBalance + amount;
+    }
+
+    public void getCheckingWithdrawInput() {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nCurrent Checkings CorBankAccountLogic Balance: "
+                        + moneyFormat.format(StudentCheckingBalance));
+                System.out.print("\nAmount you want to withdraw from Checkings CorBankAccountLogic: ");
+                double amount = input.nextDouble();
+                if ((StudentCheckingBalance - amount) >= 0 && amount >= 0) {
+                    calcCheckingWithdraw(amount);
+                    System.out.println("\nCurrent Checkings CorBankAccountLogic Balance: "
+                            + moneyFormat.format(StudentCheckingBalance));
+                    end = true;
+                } else {
+                    System.out.println("\nBalance Cannot be Negative.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                input.next();
+            }
+        }
+    }
+
+    public void getsavingWithdrawInput() {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println(
+                        "\nCurrent Savings CorBankAccountLogic Balance: " + moneyFormat.format(StudentSavingsBalance));
+                System.out.print("\nAmount you want to withdraw from Savings CorBankAccountLogic: ");
+                double amount = input.nextDouble();
+                if ((StudentSavingsBalance - amount) >= 0 && amount >= 0) {
+                    calcSavingWithdraw(amount);
+                    System.out.println("\nCurrent Savings CorBankAccountLogic Balance: "
+                            + moneyFormat.format(StudentSavingsBalance));
+                    end = true;
+                } else {
+                    System.out.println("\nBalance Cannot Be Negative.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                input.next();
+            }
+        }
+    }
+
+    public void getCheckingDepositInput() {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println("\nCurrent Checkings CorBankAccountLogic Balance: "
+                        + moneyFormat.format(StudentCheckingBalance));
+                System.out.print("\nAmount you want to deposit from Checkings CorBankAccountLogic: ");
+                double amount = input.nextDouble();
+                if ((StudentCheckingBalance + amount) >= 0 && amount >= 0) {
+                    calcCheckingDeposit(amount);
+                    System.out.println("\nCurrent Checkings CorBankAccountLogic Balance: "
+                            + moneyFormat.format(StudentCheckingBalance));
+                    end = true;
+                } else {
+                    System.out.println("\nBalance Cannot Be Negative.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                input.next();
+            }
+        }
+    }
+
+    public void getSavingDepositInput() {
+        boolean end = false;
+        while (!end) {
+            try {
+                System.out.println(
+                        "\nCurrent Savings CorBankAccountLogic Balance: " + moneyFormat.format(StudentSavingsBalance));
+                System.out.print("\nAmount you want to deposit into your Savings CorBankAccountLogic: ");
+                double amount = input.nextDouble();
+
+                if ((StudentSavingsBalance + amount) >= 0 && amount >= 0) {
+                    calcSavingDeposit(amount);
+                    System.out.println("\nCurrent Savings CorBankAccountLogic Balance: "
+                            + moneyFormat.format(StudentSavingsBalance));
+                    end = true;
+                } else {
+                    System.out.println("\nBalance Cannot Be Negative.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                input.next();
+            }
+        }
+    }
+
+    public void getTransferInput(String accType) {
+        boolean end = false;
+        while (!end) {
+            try {
+                if (accType.equals("Checkings")) {
+                    System.out.println("\nSelect an account you wish to tranfers funds to:");
+                    System.out.println("1. Savings");
+                    System.out.println("2. Exit");
+                    System.out.print("\nChoice: ");
+                    int choice = input.nextInt();
+                    switch (choice) {
+                        case 1:
+                            System.out.println("\nCurrent Checkings CorBankAccountLogic Balance: "
+                                    + moneyFormat.format(StudentCheckingBalance));
+                            System.out.print("\nAmount you want to deposit into your Savings CorBankAccountLogic: ");
+                            double amount = input.nextDouble();
+                            if ((StudentSavingsBalance + amount) >= 0 && (StudentCheckingBalance - amount) >= 0
+                                    && amount >= 0) {
+                                calcCheckTransfer(amount);
+                                System.out.println("\nCurrent Savings CorBankAccountLogic Balance: "
+                                        + moneyFormat.format(StudentSavingsBalance));
+                                System.out.println(
+                                        "\nCurrent Checkings CorBankAccountLogic Balance: "
+                                                + moneyFormat.format(StudentCheckingBalance));
+                                end = true;
+                            } else {
+                                System.out.println("\nBalance Cannot Be Negative.");
+                            }
+                            break;
+                        case 2:
+                            return;
+                        default:
+                            System.out.println("\nInvalid Choice.");
+                            break;
+                    }
+                } else if (accType.equals("Savings")) {
+                    System.out.println("\nSelect an account you wish to tranfers funds to: ");
+                    System.out.println("1. Checkings");
+                    System.out.println("2. Exit");
+                    System.out.print("\nChoice: ");
+                    int choice = input.nextInt();
+                    switch (choice) {
+                        case 1:
+                            System.out.println("\nCurrent Savings CorBankAccountLogic Balance: "
+                                    + moneyFormat.format(StudentSavingsBalance));
+                            System.out.print("\nAmount you want to deposit into your savings account: ");
+                            double amount = input.nextDouble();
+                            if ((StudentCheckingBalance + amount) >= 0 && (StudentSavingsBalance - amount) >= 0
+                                    && amount >= 0) {
+                                calcSavingTransfer(amount);
+                                System.out.println("\nCurrent checkings account balance: "
+                                        + moneyFormat.format(StudentCheckingBalance));
+                                System.out.println("\nCurrent savings account balance: "
+                                        + moneyFormat.format(StudentSavingsBalance));
+                                end = true;
+                            } else {
+                                System.out.println("\nBalance Cannot Be Negative.");
+                            }
+                            break;
+                        case 2:
+                            return;
+                        default:
+                            System.out.println("\nInvalid Choice.");
+                            break;
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\nInvalid Choice.");
+                input.next();
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="453.0" prefWidth="1074.0" style="-fx-background-color: #f6f6fb;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AtmMachineHashMap.ParentCorBank">
+   <children>
+      <Pane layoutX="55.0" layoutY="237.0" prefHeight="156.0" prefWidth="336.0" style="-fx-background-color: #23272A; -fx-background-radius: 15; -fx-effect: shadow;">
+         <children>
+            <Button layoutX="38.0" layoutY="31.0" mnemonicParsing="false" onAction="#LoginClick" prefHeight="43.0" prefWidth="261.0" style="-fx-background-color: white;" text="LOGIN">
+               <font>
+                  <Font name="Bebas" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="38.0" layoutY="83.0" mnemonicParsing="false" onAction="#RegisterClick" prefHeight="43.0" prefWidth="261.0" style="-fx-background-color: #5865F2;" text="REGISTER" textFill="WHITE">
+               <font>
+                  <Font name="Bebas" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="462.0" fitWidth="605.0" layoutX="469.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../BackgroundCorbank.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="76.0" layoutY="152.0" text="Welcome to Cor Bank!">
+         <font>
+            <Font name="Bebas Neue Book" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="204.0" text="Our mini-portable banking application!">
+         <font>
+            <Font name="Corbel Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="399.0" text="&quot;Less UI, More Functionality.&quot;">
+         <font>
+            <Font name="Calibri Light Italic" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="113.0" fitWidth="121.0" layoutX="167.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../CJC%20Logo%20White%20-%20777.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-0.65" contrast="-1.0" hue="-1.0" saturation="1.0" />
+         </effect></ImageView>
+   </children>
+</AnchorPane>

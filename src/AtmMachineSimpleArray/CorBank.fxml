@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="362.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AtmMachineSimpleArray.CorBank">
+   <children>
+      <Label layoutX="186.0" layoutY="128.0" text="Welcome to Cor Bank" />
+      <TextField fx:id="thisInputNumber" layoutX="167.0" layoutY="160.0" />
+      <TextField fx:id="thisInputPin" layoutX="167.0" layoutY="201.0" />
+      <Button layoutX="174.0" layoutY="246.0" mnemonicParsing="false" onAction="#loginClick" prefHeight="29.0" prefWidth="65.0" text="Login" />
+      <Button layoutX="249.0" layoutY="246.0" mnemonicParsing="false" onAction="#registerClick" text="Register" />
+   </children>
+</AnchorPane>
