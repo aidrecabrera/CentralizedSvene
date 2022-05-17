@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -44,10 +43,10 @@ public class CorBank extends Application {
     }
 
     @FXML
-    private TextField thisInputNumber;
+    public TextField thisInputNumber;
 
     @FXML
-    private PasswordField thisInputPin;
+    public PasswordField thisInputPin;
 
     @FXML
     public Text thisCheckingBalance;
@@ -55,18 +54,27 @@ public class CorBank extends Application {
     @FXML
     public Text thisSavingsBalance;
 
+    @FXML
+    public Text userSession;
+
     public static ArrayList<String> arrUsername = new ArrayList<>();
-    public static ArrayList<Integer> arrUserpin = new ArrayList<>();
+    public static ArrayList<String> arrUserpass = new ArrayList<>();
     public static ArrayList<Double> arrCheckingBalance = new ArrayList<>();
     public static ArrayList<Double> arrSavingsBalance = new ArrayList<>();
     public static int indexReference = 0;
 
     @FXML
+    void exitButton(ActionEvent event) {
+        JOptionPane.showMessageDialog(null, "Thank you for banking with Cor Bank! Good bye! ");
+        System.exit(0);
+    }
+
+    @FXML
     void loginClick(ActionEvent actionEvent) {
         String inputUsername = thisInputNumber.getText();
-        int inputUserpin = Integer.parseInt(thisInputPin.getText());
+        String inputUserpin = thisInputPin.getText();
         indexReference = arrUsername.indexOf(inputUsername);
-        if (arrUsername.contains(inputUsername) && arrUserpin.contains(inputUserpin)) {
+        if (arrUsername.contains(inputUsername) && arrUserpass.contains(inputUserpin)) {
             JOptionPane.showMessageDialog(null, "Successfully Logged in. Welcome to Cor Bank!");
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CorBankSavings.fxml"));
@@ -101,10 +109,10 @@ public class CorBank extends Application {
     @FXML
     void registerClick(ActionEvent event) {
         String inputUsername = thisInputNumber.getText();
-        int inputUserpin = Integer.parseInt(thisInputPin.getText());
+        String inputUserpin = thisInputPin.getText();
         if (!(arrUsername.contains(inputUsername)) && !(arrUsername.contains(inputUserpin))) {
             arrUsername.add(inputUsername);
-            arrUserpin.add(inputUserpin);
+            arrUserpass.add(inputUserpin);
             arrCheckingBalance.add(0.0);
             arrSavingsBalance.add(0.0);
             JOptionPane.showMessageDialog(null, "Account Registered. Welcome to Cor Bank!");
@@ -132,7 +140,7 @@ public class CorBank extends Application {
             double amount = Double.parseDouble(JOptionPane.showInputDialog(null, "Input amount to withdraw: "));
             if (withdrawAccType == "Savings") {
                 try {
-                    if (amount > arrSavingsBalance.get(indexReference)) {
+                    if (amount > (arrSavingsBalance.get(indexReference))) {
                         JOptionPane.showMessageDialog(null, "Amount Greater than Balance!");
                     } else {
                         NewSavingsBalance = SavingsSessionBalance - amount;
@@ -145,7 +153,7 @@ public class CorBank extends Application {
                 }
             } else if (withdrawAccType == "Checkings") {
                 try {
-                    if (amount > arrSavingsBalance.get(indexReference)) {
+                    if (amount > (arrCheckingBalance.get(indexReference))) {
                         JOptionPane.showMessageDialog(null, "Amount Greater than Balance!");
                     } else {
                         NewCheckingsBalance = CheckingSessionBalance - amount;
@@ -167,9 +175,9 @@ public class CorBank extends Application {
             String withdrawAccType = String.valueOf(JOptionPane.showInputDialog(
                     null,
                     "Select Account to Deposit: ",
-                    "Withdraw", JOptionPane.QUESTION_MESSAGE,
+                    "Deposit", JOptionPane.QUESTION_MESSAGE,
                     null, typesOfAcc, typesOfAcc[0]));
-            double amount = Double.parseDouble(JOptionPane.showInputDialog(null, "Input amount to withdraw: "));
+            double amount = Double.parseDouble(JOptionPane.showInputDialog(null, "Input amount to deposit: "));
             if (withdrawAccType == "Savings") {
                 try {
                     NewSavingsBalance = SavingsSessionBalance + amount;
@@ -237,15 +245,16 @@ public class CorBank extends Application {
     }
 
     void BalanceProcessing() {
+        userSession.setText("Good day, "+arrUsername.get(indexReference));
         CheckingSessionBalance = arrCheckingBalance.get(indexReference);
         SavingsSessionBalance = arrSavingsBalance.get(indexReference);
         if (CheckingSessionBalance == 0) {
-            thisCheckingBalance.setText("No Balance");
+            thisCheckingBalance.setText(String.valueOf(arrCheckingBalance.get(indexReference)));
         } else {
             thisCheckingBalance.setText(String.valueOf(CheckingSessionBalance));
         }
         if (SavingsSessionBalance == 0) {
-            thisSavingsBalance.setText("No Balance");
+            thisSavingsBalance.setText(String.valueOf(arrSavingsBalance.get(indexReference)));
         } else {
             thisSavingsBalance.setText(String.valueOf(SavingsSessionBalance));
         }
@@ -254,5 +263,34 @@ public class CorBank extends Application {
     @FXML
     void ShowBalanceClick(ActionEvent event) {
         BalanceProcessing();
+    }
+
+    @FXML
+    void logoutClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CorBank.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+            Stage pyramidStage = new Stage();
+            //set stage borderless
+            pyramidStage.initStyle(StageStyle.UNDECORATED);
+            pyramidStage.setScene(new Scene(root1));
+            pyramidStage.show();
+
+            new FadeIn(root1).play();
+
+            //drag it here
+            root1.setOnMousePressed(event -> {
+                x = event.getSceneX();
+                y = event.getSceneY();
+            });
+            root1.setOnMouseDragged(event -> {
+                pyramidStage.setX(event.getScreenX() - x);
+                pyramidStage.setY(event.getScreenY() - y);
+            });
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
